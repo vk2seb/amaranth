@@ -6,6 +6,7 @@
 __all__ = [
     "AlteraPlatform",
     "AMDPlatform",
+    "EfinixPlatform",
     "GowinPlatform",
     "IntelPlatform",
     "LatticeECP5Platform",
@@ -27,6 +28,9 @@ def __getattr__(name):
     if name in ("AlteraPlatform", "IntelPlatform"):
         from ._altera import AlteraPlatform
         return AlteraPlatform
+    if name == "EfinixPlatform":
+        from ._efinix import EfinixPlatform
+        return EfinixPlatform
     if name == "GowinPlatform":
         from ._gowin import GowinPlatform
         return GowinPlatform
